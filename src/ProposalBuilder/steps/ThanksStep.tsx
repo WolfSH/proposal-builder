@@ -1,0 +1,48 @@
+import * as React from 'react'
+import { Typography, Paper, Button } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+import { TextOption } from './components/TextOption';
+
+const useStyles = makeStyles(theme => ({
+	root: {
+		padding: theme.spacing(3, 2),
+		margin: theme.spacing(3, 2)
+	},
+}));
+
+const options = [
+	'Thank you for your time.',
+	'Let me know if you will have any questions.',
+	'Looking forward for your questions.'
+]
+
+export function ThanksStep({ onDone, goBack }: { onDone: any, goBack: any }) {
+	const classes = useStyles();
+
+	return (
+		<div>
+			<Typography variant="h5" component="h3">
+				Thanks
+			</Typography>
+			{
+				options.map(option => {
+					return (
+						<TextOption
+							key={option}
+							value={option}
+							onClick={() => onDone({ thanks: option })}
+						/>
+					)
+				})
+			}
+			<Button
+				onClick={goBack}
+				variant="contained"
+				size="large"
+				color="default"
+			>
+				back
+			</Button>
+		</div>
+	)
+}
