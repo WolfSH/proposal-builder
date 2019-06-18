@@ -32,7 +32,8 @@ export const finishStep: IWizardStep<IFinishStateData, IFinishStateHandlers> = {
 					+ '\n\n'
 					+ confidence
 					+ '\n\n'
-					+ "I'm a senior front-end engineer and I'm using the next technologies: "
+					+ "I'm a senior front-end engineer and I'm using the next technologies:"
+					+ '\n'
 					+ skills.map(({ label }, i) => `${i + 1}) ${label}`).join('\n')
 					+ '\n\n'
 					+ thanks
