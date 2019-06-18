@@ -13,7 +13,11 @@ const useStyles = makeStyles(theme => ({
 const questions = [
 	'Do you have more details about the project?',
 	'Do you have requirement ready?',
-	'Is API ready?'
+	'Is API ready?',
+	'Do you have wireframes/demo page of your project?',
+	'Can I take a look at current state of the application?',
+	'Do you have designs of you application?',
+	'Do you have more details about you app?'
 ]
 
 export function QuestionStep({ onDone, goBack }: { onDone: any, goBack: any }) {

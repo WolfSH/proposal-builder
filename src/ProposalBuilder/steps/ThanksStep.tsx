@@ -12,7 +12,7 @@ const useStyles = makeStyles(theme => ({
 
 const options = [
 	'Thank you for your time.',
-	'Let me know if you will have any questions.',
+	'Please let me know if you have any questions.',
 	'Looking forward for your questions.'
 ]
 
