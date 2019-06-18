@@ -78,12 +78,14 @@ export class ProposalWizardController extends React.Component<IProps, IState> {
                                     <Typography component="p">
                                         {this.state.data.greeting}
                                         <br />
+                                        <br />
                                     </Typography>
                                 }
                                 {
                                     this.state.data.question &&
                                     <Typography component="p">
                                         {this.state.data.question}
+                                        <br />
                                         <br />
                                     </Typography>
                                 }
@@ -92,11 +94,14 @@ export class ProposalWizardController extends React.Component<IProps, IState> {
                                     <Typography component="p">
                                         {this.state.data.confidence}
                                         <br />
+                                        <br />
                                     </Typography>
                                 }
                                 {
                                     this.state.data.skills &&
                                     <Typography component="p">
+                                        I'm a senior front-end engineer and I'm using the next technologies:
+                                        <br />
                                         {
                                             this.state.data.skills
                                                 .map((x: {label: string}, i: number) =>
@@ -106,12 +111,14 @@ export class ProposalWizardController extends React.Component<IProps, IState> {
                                                     </span>
                                                 )
                                         }
+                                        <br />
                                     </Typography>
                                 }
                                 {
                                     this.state.data.thanks &&
                                     <Typography component="p">
                                         {this.state.data.thanks}
+                                        <br />
                                         <br />
                                         Igor Shybyryn
                                     </Typography>
