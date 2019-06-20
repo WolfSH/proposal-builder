@@ -2,6 +2,7 @@ import * as React from 'react'
 import { Typography, Paper, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { TextOption } from './components/TextOption';
+import { thanksOptions } from '../../config';
 
 const useStyles = makeStyles(theme => ({
 	root: {
@@ -9,12 +10,6 @@ const useStyles = makeStyles(theme => ({
 		margin: theme.spacing(3, 2)
 	},
 }));
-
-const options = [
-	'Thank you for your time.',
-	'Please let me know if you have any questions.',
-	'Looking forward for your questions.'
-]
 
 export function ThanksStep({ onDone, goBack }: { onDone: any, goBack: any }) {
 	const classes = useStyles();
@@ -25,7 +20,7 @@ export function ThanksStep({ onDone, goBack }: { onDone: any, goBack: any }) {
 				Thanks
 			</Typography>
 			{
-				options.map(option => {
+				thanksOptions.map(option => {
 					return (
 						<TextOption
 							key={option}

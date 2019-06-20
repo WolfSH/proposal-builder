@@ -1,18 +1,23 @@
 import * as React from 'react'
 import { Typography, Paper, TextField } from '@material-ui/core';
 import { TextOption } from './components/TextOption';
-
-const options = [
-	'Hi[name]!',
-	'Hello[name]!',
-	'Greetings[name]!'
-]
+import { greetingOptions } from '../../config';
 
 export function GreetingStep({ onDone }: { onDone: any }) {
 	const [name, setName] = React.useState('');
+	const [firstLine, setFirstLine] = React.useState('')
 
 	const handleChange = (event: any) => {
-		setName(event.target.value);
+		switch(event.target.name) {
+			case 'name': {
+				setName(event.target.value);
+				break
+			}
+			case 'firstLine': {
+				setFirstLine(event.target.value)
+				break
+			}
+		}
 	};
 
 	return (
@@ -21,20 +26,31 @@ export function GreetingStep({ onDone }: { onDone: any }) {
 				Greeting
 			</Typography>
 			<TextField
+				id="standard-first-line"
+				label="First line"
+				name="firstLine"
+				value={firstLine}
+				onChange={handleChange}
+				margin="normal"
+			/>
+			<br/>
+			<TextField
 				id="standard-name"
 				label="Name"
+				name="name"
 				value={name}
 				onChange={handleChange}
 				margin="normal"
 			/>
 			{
-				options.map(option => {
-					const value = option.replace("[name]", name ? ` ${name}` : '')
+				greetingOptions.map(option => {
+					const value = option
+						.replace("[name]", name ? ` ${name}` : '')
 					return (
 						<TextOption
 							key={option}
 							value={value}
-							onClick={() => onDone({ greeting: value })}
+							onClick={() => onDone({ greeting: value, firstLine })}
 						/>
 					)
 				})

@@ -56,7 +56,7 @@ export class ProposalWizardController extends React.Component<IProps, IState> {
         return (
             <div className="pt-repair-wizard-controller">
                 <Grid container spacing={3}>
-                    <Grid item xs={8}>
+                    <Grid item xs={7}>
                         <NewWizard
                             name={'repair'}
                             stateMachine={proposalStateMachine}
@@ -70,9 +70,19 @@ export class ProposalWizardController extends React.Component<IProps, IState> {
                             onStepChange={this.onStepChange}
                         />
                     </Grid>
-                    <Grid item xs={4}>
+                    <Grid item xs={5}>
+                        <Typography variant="h5" component="h3">
+                            Preview
+                        </Typography>
                         <TextOption>
                             <React.Fragment>
+                                {
+                                    this.state.data.firstLine &&
+                                    <Typography component="p">
+                                        {this.state.data.firstLine}
+                                        <br />
+                                    </Typography>
+                                }
                                 {
                                     this.state.data.greeting &&
                                     <Typography component="p">

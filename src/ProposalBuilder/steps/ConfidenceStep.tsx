@@ -1,41 +1,63 @@
 import * as React from 'react'
-import { Typography, Paper, Button } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import { Typography, Button, Icon, Grid } from '@material-ui/core';
 import { TextOption } from './components/TextOption';
+import { confidenceOptions, CONFIDENCE_COLORS } from '../../config';
+import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
-	root: {
-		padding: theme.spacing(3, 2),
-		margin: theme.spacing(3, 2)
-	},
+	textContainer: {
+		textAlign: 'left'
+	}
 }));
-
-const options = [
-	'I have experience working with your tech stack, so I\'m sure there will be no problem with it.',
-	'I had tasks similar to your, so I know how to do it fastly.',
-	'I have a lot of experience working with React and redux. My upwork history proves that I have great technical and communication skills.',
-	"I know how to create single page web apps from scratch. I'm easy to communicate, have great technical skills and you will have fast, easy to maintain codebase if you will hire me. My upwork history proves my words.",
-	"I think I will be the best fit for this project because I'm using the same stack as you described. I have a lot of experience developing sites from scratch and delivering solid, fast web applications in time. I'm easy to work with, as you can see from my projects history on upwork.",
-	"I have previous experience teaching other people front-end development with React. Currently I have client who is back-end developer and he wants to learn front-end development.\nI'm sure it will not take a long time from me to help you with your issues.\nI'm true expert and you can see it from my upwork history.",
-	"I think I will be the best fit for this project because I know how to create complex web applications with React. You will get fast, easy to maintain codebase as a result of my work. If you will hire me - you will have reliable developer that can be trusted. Feedback in my working history proves my words.",
-	"I'm sure that I will be the best fit to this project. I'm using the same approaches and technologies as you need and I'm easy to communicate with. You will have information on tasks progress and any issues that I could experience during development process."
-]
 
 export function ConfidenceStep({ onDone, goBack }: { onDone: any, goBack: any }) {
 	const classes = useStyles();
-
 	return (
 		<div>
 			<Typography variant="h5" component="h3">
 				Confidence
 			</Typography>
+			<Grid
+				container
+				direction="row"
+				justify="center"
+				alignItems="center"
+			>
+				<Grid item>
+					<Icon fontSize="large" style={{color: CONFIDENCE_COLORS.SAME_TECH_STACK}}>
+						add_circle
+					</Icon>
+				</Grid>
+				<Grid className={classes.textContainer} item xs zeroMinWidth>
+					Same tech stack
+				</Grid>
+
+				<Grid item>
+					<Icon fontSize="large" style={{color: CONFIDENCE_COLORS.TEACHING}}>
+						add_circle
+					</Icon>
+				</Grid>
+				<Grid className={classes.textContainer} item xs zeroMinWidth>
+					Teaching
+				</Grid>
+
+				<Grid item>
+					<Icon fontSize="large" style={{color: CONFIDENCE_COLORS.SAME_PROJECT}}>
+						add_circle
+					</Icon>
+				</Grid>
+				<Grid className={classes.textContainer} item xs zeroMinWidth>
+					Same project before
+				</Grid>
+			</Grid>
 			{
-				options.map(option => {
+				confidenceOptions.map(({ value, iconColor }) => {
 					return (
 						<TextOption
-							key={option}
-							value={option}
-							onClick={() => onDone({ confidence: option })}
+							key={value}
+							value={value}
+							iconColor={iconColor}
+							onClick={() => onDone({ confidence: value })}
 						/>
 					)
 				})

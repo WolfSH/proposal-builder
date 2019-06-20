@@ -2,23 +2,17 @@ import * as React from 'react'
 import { Typography, Paper, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { TextOption } from './components/TextOption';
+import { questions } from '../../config';
 
 const useStyles = makeStyles(theme => ({
 	root: {
 		padding: theme.spacing(3, 2),
 		margin: theme.spacing(3, 2)
 	},
+	button: {
+		margin: theme.spacing(1),
+	},
 }));
-
-const questions = [
-	'Do you have more details about the project?',
-	'Do you have requirement ready?',
-	'Is API ready?',
-	'Do you have wireframes/demo page of your project?',
-	'Can I take a look at current state of the application?',
-	'Do you have designs of you application?',
-	'Do you have more details about you app?'
-]
 
 export function QuestionStep({ onDone, goBack }: { onDone: any, goBack: any }) {
 	const classes = useStyles();
@@ -40,12 +34,22 @@ export function QuestionStep({ onDone, goBack }: { onDone: any, goBack: any }) {
 				})
 			}
 			<Button
+				className={classes.button}
 				onClick={goBack}
 				variant="contained"
 				size="large"
 				color="default"
 			>
 				back
+			</Button>
+			<Button
+				className={classes.button}
+				onClick={() => onDone({})}
+				variant="contained"
+				size="large"
+				color="secondary"
+			>
+				skip
 			</Button>
 		</div>
 	)

@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import * as React from 'react'
 
 import { IDictionary } from '../proposal_wizard/repair_wizard_config'
+import { skills } from '../../config';
 
 const useStyles = makeStyles(theme => ({
 	root: {
@@ -12,57 +13,6 @@ const useStyles = makeStyles(theme => ({
 		margin: theme.spacing(1),
 	},
 }));
-
-const skills = [
-	{
-		value: 'react',
-		label: 'React'
-	},
-	{
-		value: 'redux',
-		label: 'Redux'
-	},
-	{
-		value: 'SASS/SCSS, LESS',
-		label: 'LESS, SASS/SCSS preprocessors for CSS'
-	},
-	{
-		value: 'babel',
-		label: 'Babel for transpiring of ES6+ JavaScript code'
-	},
-	{
-		value: 'typescript',
-		label: 'TypeScript for JavaScript with types'
-	},
-	{
-		value: 'webpack',
-		label: 'Webpack for bundling my code'
-	},
-	{
-		value: 'git',
-		label: 'git as a version control system'
-	},
-	{
-		value: 'immutable',
-		label: 'Immutable.js'
-	},
-	{
-		value: 'jquery',
-		label: 'jQuery'
-	},
-	{
-		value: 'bootstrap',
-		label: 'Bootstrap'
-	},
-	{
-		value: 'plotly',
-		label: 'Plotly plotting library'
-	},
-	{
-		value: 'datatables',
-		label: 'Datatables table data visualization and manipulation library'
-	}
-]
 
 const defaultValue: IDictionary<boolean> = skills.reduce((acc, el) => {
 	return {

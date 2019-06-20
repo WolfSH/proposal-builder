@@ -6,6 +6,7 @@ import { IWizardStep } from '../../../wizard/models';
 import { STATE_MACHINE } from '../../../wizard/helpers';
 
 export interface IFinishStateData {
+	firstLine: string,
 	greeting: string,
 	question: string,
 	confidence: string,
@@ -20,16 +21,22 @@ export const finishStep: IWizardStep<IFinishStateData, IFinishStateHandlers> = {
 	prepare() {
 		return Promise.resolve({})
 	},
-	getComponent({ greeting, question, confidence, skills, thanks }, { onDone, onGoBack }) {
+	getComponent({ greeting, question, confidence, skills, thanks, firstLine }, { onDone, onGoBack }) {
 		return (
 			<FinishStep
 				onDone={onDone}
 				goBack={onGoBack}
 				defaultProposal={
-					greeting
+					(firstLine
+						? `${firstLine}\n`
+						: '')
+					+ greeting
 					+ '\n\n'
-					+ question
-					+ '\n\n'
+					+ (
+						question
+							? `${question}\n\n`
+							: ''
+					)
 					+ confidence
 					+ '\n\n'
 					+ "I'm a senior front-end engineer and I'm using the next technologies:"
