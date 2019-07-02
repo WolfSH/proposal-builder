@@ -1,7 +1,7 @@
+import { Chip, Grid, Paper, Typography } from '@material-ui/core'
+import { makeStyles } from '@material-ui/core/styles'
+import { noop } from 'lodash'
 import * as React from 'react'
-import { Typography, Paper, Icon, Grid } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
-import { noop } from 'lodash';
 
 const useStyles = makeStyles(theme => ({
 	root: {
@@ -22,10 +22,11 @@ interface IProps {
 	value?: string,
 	children?: React.ReactNode
 	onClick?: any,
-	iconColor?: string
+	tagLabel?: string,
+	tagColor?: string
 }
 
-export function TextOption({ value, onClick = noop, children, iconColor }: IProps) {
+export function TextOption({ value, onClick = noop, children, tagLabel, tagColor }: IProps) {
 	const classes = useStyles();
 	return (
 		<Paper
@@ -40,17 +41,12 @@ export function TextOption({ value, onClick = noop, children, iconColor }: IProp
 						direction="row"
 						justify="center"
 						alignItems="center"
+						spacing={1}
 					>
 						<Grid item>
 							{
-								iconColor &&
-								<Icon
-									className={classes.icon}
-									fontSize="large"
-									style={{color: iconColor}}
-								>
-									add_circle
-								</Icon>
+								tagLabel &&
+								<Chip label={tagLabel} color="primary" style={{backgroundColor: tagColor}} />
 							}
 						</Grid>
 						<Grid item xs zeroMinWidth>
