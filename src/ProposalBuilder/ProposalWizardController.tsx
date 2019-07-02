@@ -1,5 +1,5 @@
 // import { addComponentCSS } from '@utils/css_styler'
-import { Grid, Typography } from '@material-ui/core'
+import { Grid, Typography, Hidden } from '@material-ui/core'
 import { noop } from 'lodash'
 import * as React from 'react'
 
@@ -58,7 +58,7 @@ export class ProposalWizardController extends React.Component<IProps, IState> {
         return (
             <div className="pt-repair-wizard-controller">
                 <Grid container spacing={3}>
-                    <Grid item xs={7}>
+                    <Grid item sm={7} xs={12}>
                         <NewWizard
                             name={'repair'}
                             stateMachine={proposalStateMachine}
@@ -72,21 +72,23 @@ export class ProposalWizardController extends React.Component<IProps, IState> {
                             onStepChange={this.onStepChange}
                         />
                     </Grid>
-                    <Grid item xs={5}>
-                        <Typography variant="h5" component="h3">
-                            Preview
-                        </Typography>
-                        <TextOption>
-                            <Typography component="p">
-                                <pre style={{
-                                    fontFamily: 'inherit',
-                                    whiteSpace: 'pre-wrap'
-                                }}>
-                                    {getProposalText(this.state.data)}
-                                </pre>
+                    <Hidden xsDown>
+                        <Grid item sm={5}>
+                            <Typography variant="h5" component="h3">
+                                Preview
                             </Typography>
-                        </TextOption>
-                    </Grid>
+                            <TextOption>
+                                <Typography component="p">
+                                    <pre style={{
+                                        fontFamily: 'inherit',
+                                        whiteSpace: 'pre-wrap'
+                                    }}>
+                                        {getProposalText(this.state.data)}
+                                    </pre>
+                                </Typography>
+                            </TextOption>
+                        </Grid>
+                    </Hidden>
                 </Grid>
             </div>
         );
