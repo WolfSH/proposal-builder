@@ -39,8 +39,8 @@ export const greetingOptions = [
 ]
 
 export const questions = [
-	'Do you have more details about the project?',
-	'Do you have requirement ready?',
+	'The job posting does not describe the specifics. Could you provide more details about the project requirements?',
+	'Do you have a written description for project requirements?',
 	'Is API ready?',
 	'Do you have wireframes/demo page of your project?',
 	'Can I take a look at current state of the application?',
