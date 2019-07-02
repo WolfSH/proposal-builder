@@ -25,6 +25,7 @@ export class ProposalWizardController extends React.Component<IProps, IState> {
     }
 
     onStepChange() {
+        window.scrollTo(0, 0);
     }
 
     updateWizardData = (data: any) => {
