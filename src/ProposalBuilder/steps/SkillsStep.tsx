@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import * as React from 'react'
 
 import { IDictionary } from '../proposal_wizard/repair_wizard_config'
-import { skills } from '../../config';
+import { skills, ROLES } from '../../config';
 
 const useStyles = makeStyles(theme => ({
 	root: {
@@ -21,17 +21,42 @@ const defaultValue: IDictionary<boolean> = skills.reduce((acc, el) => {
 	}
 }, {})
 
-defaultValue['react'] = true
-defaultValue['redux'] = true
-defaultValue['SASS/SCSS, LESS'] = true
-defaultValue['babel'] = true
-defaultValue['typescript'] = true
-defaultValue['webpack'] = true
-defaultValue['git'] = true
+function getDefaultValue(role: string) {
+	switch(role) {
+		case ROLES.FRONT_END: {
+			defaultValue['react'] = true
+			defaultValue['redux'] = true
+			defaultValue['SASS/SCSS, LESS'] = true
+			break
+		}
+		case ROLES.FULL_STACK: {
+			defaultValue['node'] = true
+			defaultValue['mongodb'] = true
+			defaultValue['express'] = true
+			defaultValue['react'] = true
+			defaultValue['redux'] = true
+			defaultValue['SASS/SCSS, LESS'] = true
+			break
+		}
+		case ROLES.BACK_END: {
+			defaultValue['node'] = true
+			defaultValue['mongodb'] = true
+			defaultValue['express'] = true
+			break
+		}
+	}
 
-export function SkillsStep({ onDone, goBack }: { onDone: any, goBack: any }) {
+	defaultValue['babel'] = true
+	defaultValue['typescript'] = true
+	defaultValue['webpack'] = true
+	defaultValue['git'] = true
+
+	return defaultValue
+}
+
+export function SkillsStep({ onDone, goBack, role }: { onDone: any, goBack: any, role: string }) {
 	const classes = useStyles()
-	const [state, setState] = React.useState(defaultValue);
+	const [state, setState] = React.useState(getDefaultValue(role));
 
 	const handleChange = (name: string) => (event: any) => {
 		setState({ ...state, [name]: event.target.checked });

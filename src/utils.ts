@@ -13,3 +13,44 @@ export function getTagColor(tag: string) {
 		}
 	}
 }
+
+interface IProposalData {
+	firstLine?: string,
+	greeting?: string,
+	question?: string,
+	confidence?: string,
+	role?: string,
+	skills?: { label: string, value: string }[],
+	thanks?: string
+}
+
+export function getProposalText(data: IProposalData) {
+	let result = ''
+	if (data.firstLine) {
+		result += data.firstLine
+			? `${data.firstLine}\n`
+			: ''
+	}
+	if (data.greeting) {
+		result += data.greeting + '\n\n'
+	}
+	if (data.question) {
+		result += data.question
+			? `${data.question}\n\n`
+			: ''
+	}
+	if (data.confidence) {
+		result += data.confidence
+			+ '\n\n'
+	}
+	if (data.role) {
+		result += `I'm a senior ${data.role} engineer and I'm using next technologies:\n`
+	}
+	if (data.skills) {
+		result += (data.skills ? data.skills.map(({ label }, i) => `${i + 1}) ${label}`).join('\n') : '') + '\n\n'
+	}
+	if (data.thanks) {
+		result += `${data.thanks}\n\nIgor Shybyryn`
+	}
+	return result
+}

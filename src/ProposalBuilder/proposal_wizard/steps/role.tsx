@@ -1,36 +1,36 @@
 import * as React from 'react';
 
 import { PROPOSAL_WIZARD_STEP_NAMES } from '../step-names';
-import { ConfidenceStep } from '../../steps/ConfidenceStep'
+import { RoleStep } from '../../steps/RoleStep'
 import { IWizardStep } from '../../../wizard/models';
 
-export interface IConfidenceStateData {
+export interface IRoleStateData {
 }
 
-export interface IConfidenceStateHandlers {
+export interface IRoleStateHandlers {
 }
 
-export const confidenceStep: IWizardStep<IConfidenceStateData, IConfidenceStateHandlers> = {
+export const roleStep: IWizardStep<IRoleStateData, IRoleStateHandlers> = {
 	prepare() {
 		return Promise.resolve({})
 	},
 	getComponent({}, { onDone, onGoBack }) {
-		return <ConfidenceStep onDone={onDone} goBack={onGoBack} />
+		return <RoleStep onDone={onDone} goBack={onGoBack} />
 	},
 	finish() {
 		return Promise.resolve({})
 	},
 	goNext(data) {
-		return PROPOSAL_WIZARD_STEP_NAMES.ROLE
+		return PROPOSAL_WIZARD_STEP_NAMES.SKILLS
 	},
 	goBack(data) {
-		return PROPOSAL_WIZARD_STEP_NAMES.QUESTION
+		return PROPOSAL_WIZARD_STEP_NAMES.CONFIDENCE
 	},
 	getTitle(data) {
 		return ''
 	},
 	getStepIndex(lastStepIndex) {
-		return 2;
+		return 1;
 	},
 };
 

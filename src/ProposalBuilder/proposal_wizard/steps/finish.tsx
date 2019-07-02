@@ -4,12 +4,14 @@ import { PROPOSAL_WIZARD_STEP_NAMES } from '../step-names';
 import { FinishStep } from '../../steps/FinishStep'
 import { IWizardStep } from '../../../wizard/models';
 import { STATE_MACHINE } from '../../../wizard/helpers';
+import { getProposalText } from '../../../utils';
 
 export interface IFinishStateData {
 	firstLine: string,
 	greeting: string,
 	question: string,
 	confidence: string,
+	role: string,
 	skills: { label: string, value: string }[],
 	thanks: string
 }
@@ -21,32 +23,12 @@ export const finishStep: IWizardStep<IFinishStateData, IFinishStateHandlers> = {
 	prepare() {
 		return Promise.resolve({})
 	},
-	getComponent({ greeting, question, confidence, skills, thanks, firstLine }, { onDone, onGoBack }) {
+	getComponent(data, { onDone, onGoBack }) {
 		return (
 			<FinishStep
 				onDone={onDone}
 				goBack={onGoBack}
-				defaultProposal={
-					(firstLine
-						? `${firstLine}\n`
-						: '')
-					+ greeting
-					+ '\n\n'
-					+ (
-						question
-							? `${question}\n\n`
-							: ''
-					)
-					+ confidence
-					+ '\n\n'
-					+ "I'm a senior front-end engineer and I'm using the next technologies:"
-					+ '\n'
-					+ skills.map(({ label }, i) => `${i + 1}) ${label}`).join('\n')
-					+ '\n\n'
-					+ thanks
-					+ '\n\n'
-					+ 'Igor Shybyryn'
-				}
+				defaultProposal={getProposalText(data)}
 			/>
 		)
 	},

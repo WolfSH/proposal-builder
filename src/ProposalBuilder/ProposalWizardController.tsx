@@ -7,6 +7,7 @@ import { NewWizard } from '../wizard/Wizard'
 import { proposalStateMachine } from './proposal_wizard/repair_wizard_config'
 import { PROPOSAL_WIZARD_STEP_NAMES } from './proposal_wizard/step-names'
 import { TextOption } from './steps/components/TextOption'
+import { getProposalText } from '../utils';
 
 interface IProps {
 }
@@ -76,65 +77,14 @@ export class ProposalWizardController extends React.Component<IProps, IState> {
                             Preview
                         </Typography>
                         <TextOption>
-                            <React.Fragment>
-                                {
-                                    this.state.data.firstLine &&
-                                    <Typography component="p">
-                                        {this.state.data.firstLine}
-                                        <br />
-                                    </Typography>
-                                }
-                                {
-                                    this.state.data.greeting &&
-                                    <Typography component="p">
-                                        {this.state.data.greeting}
-                                        <br />
-                                        <br />
-                                    </Typography>
-                                }
-                                {
-                                    this.state.data.question &&
-                                    <Typography component="p">
-                                        {this.state.data.question}
-                                        <br />
-                                        <br />
-                                    </Typography>
-                                }
-                                {
-                                    this.state.data.confidence &&
-                                    <Typography component="p">
-                                        {this.state.data.confidence}
-                                        <br />
-                                        <br />
-                                    </Typography>
-                                }
-                                {
-                                    this.state.data.skills &&
-                                    <Typography component="p">
-                                        I'm a senior front-end engineer and I'm using the next technologies:
-                                        <br />
-                                        {
-                                            this.state.data.skills
-                                                .map((x: {label: string}, i: number) =>
-                                                    <span>
-                                                        {i + 1}) {x.label}
-                                                        <br />
-                                                    </span>
-                                                )
-                                        }
-                                        <br />
-                                    </Typography>
-                                }
-                                {
-                                    this.state.data.thanks &&
-                                    <Typography component="p">
-                                        {this.state.data.thanks}
-                                        <br />
-                                        <br />
-                                        Igor Shybyryn
-                                    </Typography>
-                                }
-                            </React.Fragment>
+                            <Typography component="p">
+                                <pre style={{
+                                    fontFamily: 'inherit',
+                                    whiteSpace: 'pre-wrap'
+                                }}>
+                                    {getProposalText(this.state.data)}
+                                </pre>
+                            </Typography>
                         </TextOption>
                     </Grid>
                 </Grid>

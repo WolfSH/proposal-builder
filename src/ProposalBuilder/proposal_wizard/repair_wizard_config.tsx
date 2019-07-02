@@ -6,6 +6,7 @@ import { skillsStep } from './steps/skills';
 import { thanksStep } from './steps/thanks';
 import { finishStep } from './steps/finish';
 import { IWizardStep } from '../../wizard/models';
+import { roleStep } from './steps/role';
 
 export interface IDictionary<T> {
     [key: string]: T
@@ -27,28 +28,34 @@ export const proposalNavigationSteps = {
         getLabel: () => 'CONFIDENCE',
         getIndex: () => 2
     },
+    [PROPOSAL_WIZARD_STEP_NAMES.ROLE]: {
+        getValue: ({}) => 'ROLE',
+        getLabel: () => 'ROLE',
+        getIndex: () => 3
+    },
     [PROPOSAL_WIZARD_STEP_NAMES.SKILLS]: {
         getValue: ({  }) => 'SKILLS',
         getLabel: () => 'SKILLS',
-        getIndex: () => 3
+        getIndex: () => 4
     },
     [PROPOSAL_WIZARD_STEP_NAMES.THANKS]: {
         getValue: ({  }) => 'THANKS',
         getLabel: () => 'THANKS',
-        getIndex: () => 4
+        getIndex: () => 5
     },
     [PROPOSAL_WIZARD_STEP_NAMES.FINISH]: {
         getValue: ({  }) => 'FINISH',
         getLabel: () => 'FINISH',
-        getIndex: () => 5
+        getIndex: () => 6
     }
 }
 
 export const proposalStateMachine: IDictionary<IWizardStep<any, any>> = {
-    [PROPOSAL_WIZARD_STEP_NAMES.GREETING]:              greetingStep,
-    [PROPOSAL_WIZARD_STEP_NAMES.QUESTION]:              questionStep    ,
-    [PROPOSAL_WIZARD_STEP_NAMES.CONFIDENCE]:              confidenceStep,
-    [PROPOSAL_WIZARD_STEP_NAMES.SKILLS]:             skillsStep,
-    [PROPOSAL_WIZARD_STEP_NAMES.THANKS]:    thanksStep,
-    [PROPOSAL_WIZARD_STEP_NAMES.FINISH]:              finishStep,
+    [PROPOSAL_WIZARD_STEP_NAMES.GREETING]:   greetingStep,
+    [PROPOSAL_WIZARD_STEP_NAMES.QUESTION]:   questionStep    ,
+    [PROPOSAL_WIZARD_STEP_NAMES.CONFIDENCE]: confidenceStep,
+    [PROPOSAL_WIZARD_STEP_NAMES.ROLE]:       roleStep,
+    [PROPOSAL_WIZARD_STEP_NAMES.SKILLS]:     skillsStep,
+    [PROPOSAL_WIZARD_STEP_NAMES.THANKS]:     thanksStep,
+    [PROPOSAL_WIZARD_STEP_NAMES.FINISH]:     finishStep,
 }
