@@ -67,7 +67,8 @@ export const greetingOptions = [
 	'Greetings[name]!',
 	'Dear[name]!',
 	'TODO: in case of invite: Thanks for job invite. It\'s a pleasure to meet you',
-	'TODO: in case of invite: Thank you for your invitation.'
+	'TODO: in case of invite: Thank you for your invitation.',
+	'Hey there, I see you’re looking for somebody to create a highly-converting landing page…'
 ]
 
 export const questions = [
