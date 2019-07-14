@@ -47,7 +47,7 @@ export function getProposalText(data: IProposalData) {
 		result += `I'm a senior ${data.role} engineer and I'm using next technologies:\n`
 	}
 	if (data.skills) {
-		result += (data.skills ? data.skills.map(({ label }, i) => `${i + 1}) ${label}`).join('\n') : '') + '\n\n'
+		result += (data.skills ? data.skills.map(({ label }, i) => `- ${label}`).join('\n') : '') + '\n\n'
 	}
 	if (data.thanks) {
 		result += `${data.thanks}\n\nIgor Shybyryn`
