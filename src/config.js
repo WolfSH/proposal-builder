@@ -73,9 +73,9 @@ export const greetingOptions = [
 
 export const questions = [
 	'The job posting does not describe the specifics. Could you provide more details about the project requirements?',
-	'Do you have a written description for project requirements?',
-	'Is API ready?',
-	'Do you have wireframes/demo page of your project?',
+	'I have found this job posting quite interesting. I would like to know more about it. Do you have a written description for project requirements?',
+	'Seems like I would need to get some data from your side. Do you have an API I could connect to?',
+	'It would be nice to get a deeper understanding on how things work in your system. Do you have wireframes/demo page of your project?',
 	'Can I take a look at current state of the application?',
 	'Do you have designs of you application?',
 	'Do you have more details about you app?',
@@ -192,6 +192,7 @@ export const thanksOptions = [
 	'Thank you for your consideration',
 	'I am waiting to be hired in this project to show my skills.',
 	'TODO: I am available for an interview Monday to Friday 10 am to 12pm (UTC + 10:00 timezone). I look forward to having the opportunity to discuss the job further.',
+	'Let me know if you would like to discuss things further with me.',
 	'Best regards,',
 	'Regards,',
 	'Kind regards,'
