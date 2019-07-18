@@ -17,11 +17,11 @@ export const confidenceOptions = [
 	},
 	{
 		tags: [CONFIDENCE_TAGS.SAME_PROJECT],
-		value: 'TODO: Something about how I see this project being completed, my approaches'
+		value: 'TODO: Something about how I see this project being completed, my approaches; Some steps I would like to propose in order to finish this project'
 	},
 	{
 		tags: [CONFIDENCE_TAGS.SAME_PROJECT],
-		value: 'TODO: something about "you will receive hight quality work"'
+		value: 'I have delt with similar project in the past quite successfuly, which gives me confidence to say that you will receive hight quality work by hiring me'
 	},
 	{
 		tags: [CONFIDENCE_TAGS.SAME_PROJECT],
@@ -29,19 +29,19 @@ export const confidenceOptions = [
 	},
 	{
 		tags: [CONFIDENCE_TAGS.SAME_PROJECT],
-		value: 'For more on my skill and successfully finished jobs, please have a look on my Profile, Portfolio, Work history and Feedback.'
+		value: 'For more on my skill and successfully finished jobs, please have a look at my Profile, Portfolio, Work History, and Feedback.'
 	},
 	{
 		tags: [CONFIDENCE_TAGS.SAME_PROJECT],
-		value: 'I have a lot of experience working with React and redux. My upwork history proves that I have great technical and communication skills.',
+		value: 'I have a lot of experience working with React and Redux. My Upwork history proves that I have great technical and communication skills.',
 	},
 	{
 		tags: [CONFIDENCE_TAGS.SAME_PROJECT],
-		value: "I know how to create single page web apps from scratch. I'm easy to communicate, have great technical skills and you will have fast, easy to maintain codebase if you will hire me. My upwork history proves my words.",
+		value: "I know how to create single-page web apps from scratch. During the numerous projects I delivered, I have proven to be a good communicator and a great technical expert. You will have a fast, easy to maintain codebase if you hire me. My Upwork profile can be used as a reference.",
 	},
 	{
 		tags: [CONFIDENCE_TAGS.SAME_PROJECT],
-		value: "I think I will be the best fit for this project because I know how to create complex web applications with React. You will get fast, easy to maintain codebase as a result of my work. If you will hire me - you will have reliable developer that can be trusted. Feedback in my working history proves my words.",
+		value: "I think I will be the best fit for this project because I know how to create complex web applications with React. You will get a fast, easy to maintain codebase as a result of my work. If you will hire me - you will have a reliable developer that can be trusted. Feedback in my working history proves my words.",
 	},
 	{
 		tags: [CONFIDENCE_TAGS.SAME_PROJECT],
@@ -49,15 +49,15 @@ export const confidenceOptions = [
 	},
 	{
 		tags: [CONFIDENCE_TAGS.SAME_TECH_STACK],
-		value: "I think I will be the best fit for this project because I'm using the same stack as you described. I have a lot of experience developing sites from scratch and delivering solid, fast web applications in time. I'm easy to work with, as you can see from my projects history on upwork.",
+		value: "I think I will be the best fit for this project because I'm using the same technology stack as you described. I have a lot of experience developing sites from scratch and delivering solid, fast web applications in time. I'm easy to work with, as you can see from my project's history on Upwork.",
 	},
 	{
 		tags: [CONFIDENCE_TAGS.SAME_TECH_STACK],
-		value: "I'm sure that I will be the best fit to this project. I'm using the same approaches and technologies as you need and I'm easy to communicate with. You will have information on tasks progress and any issues that I could experience during development process."
+		value: "I'm sure that I will be the best fit for this project. I'm using the same approaches and technologies as you need and I'm easy to communicate with. You will have information on tasks progress and any issues that I could experience during the development process."
 	},
 	{
 		tags: [CONFIDENCE_TAGS.TEACHING],
-		value: "I have previous experience teaching other people front-end development with React. Currently I have client who is back-end developer and he wants to learn front-end development.\nI'm sure it will not take a long time from me to help you with your issues.\nI'm true expert and you can see it from my upwork history.",
+		value: "I have previous experience teaching other people front-end development using React.js. Currently, I have a client who is a back-end developer who wants to learn front-end development. I'm sure it won't take a long time for me to help you with your issues. My Upwork history proves the level of my expertise.",
 	}
 ]
 
@@ -76,9 +76,9 @@ export const questions = [
 	'I have found this job posting quite interesting. I would like to know more about it. Do you have a written description for project requirements?',
 	'Seems like I would need to get some data from your side. Do you have an API I could connect to?',
 	'It would be nice to get a deeper understanding on how things work in your system. Do you have wireframes/demo page of your project?',
-	'Can I take a look at current state of the application?',
-	'Do you have designs of you application?',
-	'Do you have more details about you app?',
+	'Could I take a look at the current state of the application? It will be much easier to catch up on the development progress this way.',
+	'Does your application have UI/UX design at this stage?',
+	'Could you tell me more about your application? Is there any documentation that I could reffer to?',
 	'Do you have a website so I can understand this more?',
 	'Can you send me a link to your site?'
 ]
