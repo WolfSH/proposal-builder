@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/proposal-builder/static/css/main.c8a76921.chunk.css",
+    "main.js": "/proposal-builder/static/js/main.7c8832a8.chunk.js",
+    "main.js.map": "/proposal-builder/static/js/main.7c8832a8.chunk.js.map",
+    "runtime~main.js": "/proposal-builder/static/js/runtime~main.a5dbe802.js",
+    "runtime~main.js.map": "/proposal-builder/static/js/runtime~main.a5dbe802.js.map",
+    "static/js/2.a91a2fbf.chunk.js": "/proposal-builder/static/js/2.a91a2fbf.chunk.js",
+    "static/js/2.a91a2fbf.chunk.js.map": "/proposal-builder/static/js/2.a91a2fbf.chunk.js.map",
+    "index.html": "/proposal-builder/index.html",
+    "precache-manifest.5cb3182d380f562994776608a1a8210b.js": "/proposal-builder/precache-manifest.5cb3182d380f562994776608a1a8210b.js",
+    "service-worker.js": "/proposal-builder/service-worker.js",
+    "static/css/main.c8a76921.chunk.css.map": "/proposal-builder/static/css/main.c8a76921.chunk.css.map",
+    "static/media/sirmasa logo gray only logo.svg": "/proposal-builder/static/media/sirmasa logo gray only logo.977ee1af.svg"
+  }
+}
